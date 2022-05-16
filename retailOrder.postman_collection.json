@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "c6709b66-8dfe-4a37-bb1c-dd3dc825ad32",
+		"name": "retailOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9003/api/v1/retail/placeorder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1MjYyNDUzMSwiaWF0IjoxNjUyNjA2NTMxfQ.stDI7MCbltX9If1yN_TEgPdVAQjHncNU2Kl8ZSQ9QlQH10p6aEpNwuym55N8OpRErx37sD7JmDUpXUU0unzc5Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"orderIdentifier\" : \"ORDER1005\",\r\n\"customerName\" : \"Jagan Kach\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/api/v1/retail/placeorder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"api",
+						"v1",
+						"retail",
+						"placeorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\" : \"admin\",\r\n\"password\" : \"password\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9003/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9003/api/v1/retail/fetchOrder/4752",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1MjYyNTA3OCwiaWF0IjoxNjUyNjA3MDc4fQ.S735ZuyUL6ObrlTEa7MW7yLTsn9STjybfc2on_WZN78_01QJfuo0VNxNUlOqMfnilEOMB70DUTwP6kLtabWbqw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9003/api/v1/retail/getorder/6352",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"api",
+						"v1",
+						"retail",
+						"getorder",
+						"6352"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
